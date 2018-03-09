@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Visualize your Spotify data with Qlik</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <div class="container">
+    <button class="btn btn-default" id="btn-clear">clear your selection</button>
+      <div id="header">
+        <div style="height:100%; margin-left:10%">
+          <img id="logo" src="Spotify_logo.png" />
+        </div>
+      </div>
+      <div id="login">
+        <h1>Log in to view your data</h1>
+        <a href="/login" class="btn btn-primary">Log in with Spotify</a>
+      </div>
+      <div id="loggedin">
+        <div id="user-profile">
+        </div>
+        <div id="oauth" style='display: none'>
+        </div>
+        <div id='button-group'>
+          <!-- <button class="btn btn-default" id="obtain-new-token" style="display:none">Favourite tracks analysis</button> -->
+          <button class="btn btn-default" id="press-me">What are your all time favorite songs?</button><br>
+          <button class="btn btn-default" id="press-me2" disabled>What is your favortie artist & genre?</button><br>
+          <button class="btn btn-default" id="press-me3" disabled>About your most recent played songs...</button><br>
+          <button class="btn btn-default" id="press-me4">What is in your song library?</button><br>
+        </div>
+      </div>
+      <svg viewbox="0 0 100 20">
+        <path fill=white opacity="0.5" d="M0 30 V15 Q30 3 60 15 V30z" />
+        <path fill=white d="M0 500 V12 Q30 17 55 12 T100 11 V500z" />
+      </svg>
+      <div id='view-port'>
+        <div id="chart1"></div>
+        <div id="chart2"></div>
+        <div id="chart3"></div>
+        <div id="chart4"></div>
+        <div id="chart5"></div>
+      </div> 
+      <svg viewbox="0 0 100 20">
+        <path fill=white d="M0 0 V3 Q30 17 55 12 T100 11 V-3z" />
+      </svg>         
+
+      <div id='footer'>
+      </div>
+    </div>
+
+    <script id="user-profile-template" type="text/x-handlebars-template">
+      <div id="welcome-info">
+        <h2 >What are you jamming to?</h2>  
+        <h5 >Hi,{{display_name}}. Let's see what you have been listening to and explore other songs you may like.</h5>
+      </div>  <!-- 
+      <div class="media">
+        <div class="pull-right">
+          <img id="profile-pic" class="media-object img-circle " width="80" src="{{images.0.url}}" />
+        </div>
+      </div> -->
+    </script>
+
+    <script id="oauth-template" type="text/x-handlebars-template">
+      <dl class="dl-horizontal">
+        <dt>Access token</dt><dd class="text-overflow">{{access_token}}</dd>
+        <dt>Refresh token</dt><dd class="text-overflow">{{refresh_token}}></dd>
+      </dl>
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+    <script src="bundle.js"></script>
+  </body>
+</html>
+
+
+
