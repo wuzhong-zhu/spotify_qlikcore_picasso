@@ -14,3 +14,11 @@ In order to run the different examples, open the folder with the name of the flo
     $ node Spotify.js
 
 Then, open `http://localhost:8888` in a browser.
+
+TODOs
+- Two more button to implement
+- Add chart title/descriptions
+- Change genre charts to...something else
+- Ponits on Genre chart becomse very big after selection why?
+- X axis and Y axis been hidden in certain resolution?
+- Lasso selection in popularity chart
